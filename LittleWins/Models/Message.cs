@@ -15,10 +15,6 @@ namespace LittleWins.Models
 
             Memory = formData["Memory"];
 
-            JObject json = JObject.Parse(Memory);
-
-            DateAnswer = json["twilio"]["collected_data"]["collect_comments"]["answers"]["date"]["answer"].ToString();
-            DetailAnwser = json["twilio"]["collected_data"]["collect_comments"]["answers"]["details"]["answer"].ToString();
         }
         public string Memory { get; set; }
         public string DateAnswer { get; set; }
