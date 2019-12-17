@@ -37,6 +37,12 @@ namespace LittleWins
 
             log.LogInformation(message.Memory);
 
+            var date = DateTime.Parse(message.DateAnswer);
+
+            var littleWinEntity = new LittleWinEntity(message.DetailAnwser, date);
+
+            var result = await _tableContext.InsertOrMergeEntityAsync(littleWinEntity);
+
             var jsonResponsePositive = @"{ ""actions"": [
             {
                 ""say"": ""You achievement was saved successfully!""
@@ -46,7 +52,7 @@ namespace LittleWins
             var jsonResponseNegative =
                 @"{ ""actions"": [ {""say"": ""There was a problem saving your achievement""} ] }";
 
-            return message.Memory != null
+            return result != null
                 ? new ContentResult{Content=jsonResponsePositive, ContentType = "application/json", StatusCode = 200}
                 : new ContentResult{Content=jsonResponseNegative, ContentType = "application/json", StatusCode = 418};
 

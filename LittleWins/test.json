@@ -1,0 +1,35 @@
+﻿{
+  "twilio": {
+    "chat": {
+      "ChannelSid": "CHfcbc9a7646d8477696b86ff9111ad67f",
+      "AssistantName": "",
+      "Attributes": {},
+      "ServiceSid": "IScea4008aec2142028b7031c148134a8f",
+      "Index": 0,
+      "From": "user",
+      "MessageSid": "IMd1c77849055a4b068f914c353e50682c"
+    },
+    "collected_data": {
+      "collect_comments": {
+        "answers": {
+          "date": {
+            "answer": "2019-11-09",
+            "filled": true,
+            "type": "Twilio.DATE",
+            "confirmed": false,
+            "attempts": 1
+          },
+          "details": {
+            "answer": "I gave a talk on dependency injection",
+            "filled": true,
+            "attempts": 1,
+            "confirmed": false
+          }
+        },
+        "date_completed": "2019-11-14T15:27:03Z",
+        "date_started": "2019-11-14T15:26:15Z",
+        "status": "complete"
+      }
+    }
+  }
+}
