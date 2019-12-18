@@ -43,14 +43,8 @@ namespace LittleWins
 
             var result = await _tableContext.InsertOrMergeEntityAsync(littleWinEntity);
 
-            var jsonResponsePositive = @"{ ""actions"": [
-            {
-                ""say"": ""You achievement was saved successfully!""
-            }
-            ]
-        }";
-            var jsonResponseNegative =
-                @"{ ""actions"": [ {""say"": ""There was a problem saving your achievement""} ] }";
+            var jsonResponsePositive = @"{ ""actions"":[{""say"": ""You achievement was saved successfully!""}]}";
+            var jsonResponseNegative = @"{ ""actions"": [ {""say"": ""There was a problem saving your achievement""}]}";
 
             return result != null
                 ? new ContentResult{Content=jsonResponsePositive, ContentType = "application/json", StatusCode = 200}
