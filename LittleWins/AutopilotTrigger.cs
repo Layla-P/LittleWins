@@ -28,8 +28,7 @@ namespace LittleWins
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
             HttpRequest req, ILogger log)
         {
-           
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var requestBody = await req.ReadAsStringAsync();
 
             log.LogInformation(requestBody);
 
@@ -39,7 +38,7 @@ namespace LittleWins
 
             var date = DateTime.Parse(message.DateAnswer);
 
-            var littleWinEntity = new LittleWinEntity(message.DetailAnwser, date);
+            var littleWinEntity = new LittleWinEntity(message.DetailAnswer, date);
 
             var result = await _tableContext.InsertOrMergeEntityAsync(littleWinEntity);
 
