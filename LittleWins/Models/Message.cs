@@ -18,7 +18,7 @@ namespace LittleWins.Models
         }
         public string Memory { get; set; }
         public string DateAnswer { get; set; }
-        public string DetailAnwser { get; set; }
+        public string DetailAnswer { get; set; }
 
         private Dictionary<string, string> FormData(string formQuery)
         {
